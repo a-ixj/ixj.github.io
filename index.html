@@ -1,80 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Following Sheep</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            cursor: none;
-        }
-
-        body {
-            background: #ffffff;
-            min-height: 100vh;
-            overflow: hidden;
-        }
-
-        #sheep {
-            position: fixed;
-            width: 64px;
-            height: 64px;
-            transition: transform 0.3s ease;
-            pointer-events: none;
-        }
-
-        /* Sheep sprite - replace with your own image */
-        .sheep-img {
-            width: 100%;
-            height: 100%;
-            background-image: url('https://www.svgrepo.com/show/468939/sheep.svg');
-            background-size: contain;
-            background-repeat: no-repeat;
-        }
-    </style>
-</head>
-<body>
-    <div id="sheep">
-        <div class="sheep-img"></div>
-    </div>
-
-    <script>
-        const sheep = document.getElementById('sheep');
-        let targetX = window.innerWidth / 2;
-        let targetY = window.innerHeight / 2;
-        let currentX = targetX;
-        let currentY = targetY;
-
-        // Track mouse position
-        document.addEventListener('mousemove', (e) => {
-            targetX = e.clientX;
-            targetY = e.clientY;
-        });
-
-        // Animation loop
-        function animate() {
-            // Calculate movement
-            const dx = targetX - currentX;
-            const dy = targetY - currentY;
-            
-            // Update position
-            currentX += dx * 0.05;
-            currentY += dy * 0.05;
-            
-            // Apply movement and rotation
-            sheep.style.transform = `
-                translate(${currentX - 32}px, ${currentY - 32}px)
-                scaleX(${dx > 0 ? 1 : -1})
-            `;
-
-            requestAnimationFrame(animate);
-        }
-
-        // Start animation
-        animate();
-    </script>
-</body>
+<!doctype html>
+<html>
+  <head>
+    <title>ixj</title>
+  </head>
+  <body>
+    <p>Four score and seven years ago our fathers brought forth on this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal.</p>
+  </body>
 </html>
